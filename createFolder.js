@@ -59,11 +59,12 @@ const createWindow = () => {
 
 
         createShortcut.create(finalDir+"/windowsAppFolderContent_DontEditOrExclude/"+data.name+".lnk", {
-            target: __dirname+"/WindowsAppFolder-win32-x64/WindowsAppFolder.exe", //change on build
+            target: __dirname+"/WindowsAppFolder-win32-x64/WindowsAppFolder.exe",
             args: `"${data.name}"`,
+        }, () => {
+            require('child_process').exec('start "" "'+finalDir+'"', () => app.quit()); 
         }); 
 
-        require('child_process').exec('start "" "'+finalDir+'"', () => app.quit()); 
         return "success";
     })
 
