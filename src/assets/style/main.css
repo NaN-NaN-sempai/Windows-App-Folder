@@ -1,0 +1,197 @@
+@font-face {
+  font-family: "uniSans";
+  src: url("../fonts/uni-sans.thin-caps.otf");
+}
+:root {
+  --bgColor: rgba(47, 47, 47, 0.2);
+  --containerColor: rgba(30, 30, 30, 0.5);
+  --scrollColor: rgba(255, 255, 255, 0.25);
+  --scrollColorHover: rgba(255, 255, 255, .7);
+  --txtColor: white;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  outline: none;
+  font-family: sans-serif;
+  color: var(--txtColor);
+}
+
+body {
+  background: transparent;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.debug {
+  position: absolute;
+  z-index: 2;
+  top: 10px;
+  left: 10px;
+}
+.debug button {
+  color: black;
+  font-size: 23px;
+  padding: 5px;
+}
+
+.close {
+  background: var(--bgColor);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+}
+
+.container {
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  transform: translate(50%, -50%);
+  background: var(--containerColor);
+  border-radius: 20px;
+}
+.container .title {
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+.container hr {
+  border: none;
+  border-bottom: 2px solid var(--txtColor);
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.container .controls {
+  position: absolute;
+  top: 7px;
+  right: 15px;
+  display: flex;
+}
+.container .controls .controlBtn {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  margin-left: 5px;
+  border-radius: 50%;
+  outline: 1px solid transparent;
+  transition: background 0.1s, outline 0.1s;
+  cursor: pointer;
+}
+.container .controls .controlBtn span {
+  font-size: 30px;
+  font-family: "uniSans";
+  font-weight: lighter;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.container .controls .controlBtn:hover {
+  outline: 1px solid var(--txtColor);
+  background: var(--bgColor);
+}
+.container .content {
+  display: block !important;
+  text-align: center;
+}
+.container .content .addFolder input {
+  color: black;
+  padding: 5px;
+}
+.container .content .addFolder button {
+  color: black;
+  padding: 5px;
+}
+.container .grid, .container .content {
+  padding: 5px;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  max-height: 53vh;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+}
+.container .grid .item, .container .content .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 20px;
+  transition: background 0.1s;
+}
+.container .grid .item:hover, .container .content .item:hover {
+  background: var(--bgColor);
+  cursor: pointer;
+}
+.container .grid .item img, .container .content .item img {
+  width: 70px;
+  margin: 5px;
+}
+.container .grid .item span, .container .content .item span {
+  font-size: 13px;
+  max-width: 70px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.container.typeB {
+  background: none;
+}
+.container.typeB .title {
+  font-family: "uniSans";
+  letter-spacing: 3px;
+  text-shadow: 0 0 2px black;
+  padding-bottom: 70px;
+}
+.container.typeB hr {
+  display: none;
+}
+.container.typeB .controls {
+  top: 45px;
+  right: 15px;
+}
+.container.typeB .controls .controlBtn span {
+  text-shadow: 0 0 2px black;
+}
+.container.typeB .controls .controlBtn:hover {
+  outline: 1px solid var(--txtColor);
+  background: var(--containerColor);
+}
+.container.typeB .grid, .container.typeB .content {
+  padding: 20px;
+  padding-left: 40px;
+  background: var(--containerColor);
+  border-radius: 20px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--scrollColor);
+  border-radius: 0 20px 20px 0;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollColorHover);
+}/*# sourceMappingURL=main.css.map */

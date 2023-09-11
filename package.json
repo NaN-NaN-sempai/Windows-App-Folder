@@ -1,0 +1,27 @@
+{
+  "name": "electron-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "folders": "electron createFolder.js",
+    "pack": "npx electron-packager . WindowsAppFolder --overwrite --icon=./src/assets/icon/logo.png",
+    "packFolders": "npx electron-packager .  WindowsAppFolder_FolderCreator --overwrite --icon=./src/assets/icon/logo.png"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^26.2.0",
+    "electron-packager": "^17.1.2"
+  },
+  "dependencies": {
+    "@supercharge/fs": "^3.4.0",
+    "electron-acrylic-window": "^0.5.11",
+    "icon-extractor-win": "github:NenoxAG/win-icon-extractor",
+    "lodash": "^4.17.21",
+    "node-fetch": "^2.7.0",
+    "windows-shortcuts": "^0.1.6"
+  }
+}

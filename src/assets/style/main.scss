@@ -1,0 +1,251 @@
+@font-face {
+    font-family: 'uniSans';
+    src: url("../fonts/uni-sans.thin-caps.otf");
+}
+
+:root {
+    --bgColor: rgba(47, 47, 47, 0.2);
+    --containerColor: rgba(30, 30, 30, 0.5);
+    --scrollColor: rgba(255, 255, 255, 0.25);
+    --scrollColorHover: rgba(255, 255, 255, .7);
+    --txtColor: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    outline: none;
+    font-family: sans-serif;
+    color: var(--txtColor);
+}
+
+body {
+    background: transparent;
+}
+
+.hidden { 
+    display: none !important;
+}
+
+.debug {
+    position: absolute;
+
+    z-index: 2;
+
+    top: 10px;
+    left: 10px;
+
+    button { 
+        color: black;  
+        font-size: 23px;
+        padding: 5px;
+    }
+}
+
+.close {
+    background: var(--bgColor);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(2px);
+}
+
+
+
+
+.container {
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    transform: translate(50%, -50%);
+
+    background: var(--containerColor);
+    
+    border-radius: 20px;
+    
+    .title {
+        text-align: center;
+
+        padding-top: 5px;
+        padding-bottom: 10px;
+    }
+
+    hr {
+        border: none;
+        border-bottom:  2px solid var(--txtColor);
+
+        $margin: 20px;
+        margin-left: $margin;
+        margin-right: $margin;
+    }
+
+    .controls {
+        position: absolute;
+        top: 7px;
+        right: 15px;
+        display: flex;
+
+        .controlBtn {
+            position: relative;
+            width: 30px;
+            height: 30px;
+
+            margin-left: 5px;
+
+            border-radius: 50%;
+            outline: 1px solid transparent;
+
+            transition: background .1s, outline .1s;
+
+            cursor: pointer;
+
+            span { 
+                font-size: 30px;
+                font-family: "uniSans"; 
+                font-weight: lighter;
+                
+                position: absolute;
+
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            &:hover {
+                outline: 1px solid var(--txtColor);
+                background: var(--bgColor);
+            }
+        }
+    }
+
+    .content {
+        display: block !important;
+        text-align: center;
+
+        .addFolder {
+            input {
+                color: black;
+                padding: 5px;
+            }
+
+            button { 
+                color: black;
+                padding: 5px;
+            }
+        }
+    }
+
+    .grid, .content {
+        padding: 5px;
+        
+        display: grid;
+        grid-template-columns: auto auto auto auto; 
+
+        max-height: 53vh;
+
+        overflow-y: auto;
+        scrollbar-gutter: stable; 
+
+
+        .item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            padding: 5px;
+            margin: 5px;
+            border-radius: 20px;
+
+            transition: background .1s;
+
+            &:hover {
+                background: var(--bgColor);
+                cursor: pointer;
+            }
+            
+            $itemSize: 70px;
+            img {
+                width: $itemSize;
+                margin: 5px;    
+            }
+
+            span {
+                font-size: 13px;
+                max-width: $itemSize;
+
+                margin-top: 5px;
+                margin-bottom: 5px;
+
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+        }
+    }
+}
+
+.container.typeB {
+
+    background: none;
+    
+    .title {
+        font-family: "uniSans"; 
+        letter-spacing: 3px;
+
+        text-shadow: 0 0 2px black;
+
+        padding-bottom: 70px;
+    }
+
+    hr { display: none; }
+
+    .controls {
+        top: 45px;
+        right: 15px;
+        .controlBtn {
+            span {
+                text-shadow: 0 0 2px black;
+            }
+            
+
+            &:hover {
+                outline: 1px solid var(--txtColor);
+                background: var(--containerColor);
+            }
+        }
+    }
+
+    .grid, .content {
+        padding: 20px;
+        padding-left: 40px;
+
+        background: var(--containerColor);
+        
+        border-radius: 20px;
+    }
+}
+
+
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--scrollColor);
+    border-radius: 0 20px 20px 0;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollColorHover);  
+}

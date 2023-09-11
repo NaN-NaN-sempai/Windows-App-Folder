@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows App Folder</title>
+    <link rel="stylesheet" href="assets/style/main.css">
+</head>
+<body>
+    <div class="debug hidden">
+        <button onclick="location.reload()">reload</button> 
+    </div>
+    <div class="close"></div>
+
+    <div class="container typeB">
+        <h2 class="title">Windows App Folder</h2>
+
+        <hr>
+
+        <div class="controls">
+            <a class="addApps" title="Create a new folder..."   >
+                <div class="controlBtn">
+                    <span>+</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="content hidden">
+            <div class="empty hidden">
+                <h3>Empty</h3>
+                <br> 
+                <p>
+                    you have no folders right now...
+                    <br>
+                    <br>
+                    Click on the plus icon (+) on the top right to start creating folders!
+                </p>
+            </div>
+            <form class="addFolder hidden">
+                <button class="return">Return</button>
+                <br>
+                <br>
+                <br>
+                <br>
+                <p>Folder name:</p> 
+                <input id="name" name="name" type="text" placeholder="My folder name"/>
+                <br>
+                <br>
+                <button class="btn" type="submit">Save</button>
+            </form>
+        </div>
+
+        <div class="grid hidden">
+        </div>
+    </div>
+
+</body>
+
+<script src="assets/scripts/main.js"></script>
+<script src="assets/scripts/manageFolders.js"></script>
+</html>
