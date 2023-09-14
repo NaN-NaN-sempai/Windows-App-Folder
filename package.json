@@ -5,9 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "folders": "electron createFolder.js",
-    "pack": "npx electron-packager . WindowsAppFolder --overwrite --icon=./src/assets/icon/logo.png",
-    "packFolders": "npx electron-packager .  WindowsAppFolder_FolderCreator --overwrite --icon=./src/assets/icon/logo.png"
+    "pack": "npx electron-packager . WindowsAppFolder --overwrite --icon=./src/assets/icon/logo.png"
   },
   "keywords": [],
   "author": "",

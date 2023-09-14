@@ -11,7 +11,7 @@ contextBridge.exposeInMainWorld("api", {
     createFolder: (data) => ipcRenderer.invoke("createFolder", data),
     openFolderDir: (data) => ipcRenderer.invoke("openFolderDir", data),
     openFile: (data) => ipcRenderer.invoke("openFile", data),
-    folderName: (data) => ipcRenderer.invoke("folderName", data),
+    args: (data) => ipcRenderer.invoke("args", data),
     getIcon: (data) => ipcRenderer.invoke("getIcon", data),
     iconCache: (data) => ipcRenderer.invoke("iconCache", data),
     

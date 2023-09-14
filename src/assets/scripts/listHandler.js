@@ -3,19 +3,18 @@ let folderName;
 let iconCache;
 
 let folderNameDom = document.querySelector(".container .folderName");
+let container = document.querySelector(".container");
 
 
 const getIcon = async (file, img) => {
-    //console.log(typeof iconCache, iconCache, file);
-
     const setSrc = (icon) => img.src = (icon.addPreText? "data:image/png;base64,": "") + icon.content;
 
     if(iconCache[file]){
-        console.log(new Date().getMilliseconds(), "red from cache");
+        console.log(file, new Date().getMilliseconds(), "read from cache");
         setSrc(iconCache[file]);
 
     } else {
-        console.log(new Date().getMilliseconds(), "red from api");
+        console.log(file, new Date().getMilliseconds(), "read from api");
         api.getIcon(file).then(icon => {
             setSrc(icon);
 
@@ -27,8 +26,15 @@ const getIcon = async (file, img) => {
 
 
 (async () => { 
-    api.folderName()
-        .then(name => folderName = folderNameDom.innerHTML = name);
+    api.args()
+        .then(args => {
+            folderName = folderNameDom.innerHTML = args[0];
+
+            let styleType = args[1];
+            if(!styleType) styleType = "typeB";
+
+            container.classList.add(styleType)
+        });
 
     await api.iconCache({action: "create"});
 
@@ -38,10 +44,13 @@ const getIcon = async (file, img) => {
     
     files = await api.getFolder(); 
 
+    let ignoreCount = 0;
+
     if(files == "no data") return alert("Error: "+files)
     if(files) {
+        files = files.sort((a, b) => b.time - a.time);
         files.forEach(file => {
-            if(file.ignore) return; 
+            if(file.ignore) return ignoreCount++;            
             
             let a = document.createElement("a");
                 a.className = "item"; 
@@ -52,7 +61,6 @@ const getIcon = async (file, img) => {
                     let res = await api.openFile(decodeURI(a.dataset.path))
                 
                     if(res != "success") alert("error: "+ res);
-                    else setTimeout(()=>api.close(), 1000);
                 });
                 
 
@@ -69,7 +77,7 @@ const getIcon = async (file, img) => {
                 
         })
 
-        if(files.length == 2){
+        if(files.length <= ignoreCount){
             document.querySelector(".grid").innerHTML=`<p style="text-align: center">you have no item right now...
             <br>
             <br>
@@ -83,5 +91,4 @@ document.querySelector(".addApps").addEventListener("click", async () => {
     let res = await api.openFolderDir(folderName);
 
     if(res != "success") alert("error: "+ res);
-    else setTimeout(()=>api.close(), 1000);
 });

@@ -42,11 +42,13 @@ async function submit(event) {
 
     const formDataObj = {};
     myFormData.forEach((value, key) => (formDataObj[key] = value));
+
+    if(!formDataObj.name) return alert("error: enpty name");
     
     let res = await api.createFolder(formDataObj);
 
     if(res != "success") alert("error: "+ res);
-    else toggleDisplay();
+    else content.remove();
 }
 
 document.querySelector(".addApps").addEventListener("click", () => {
@@ -70,7 +72,6 @@ document.querySelector(".addApps").addEventListener("click", () => {
                 a.title = folder;
                 a.addEventListener("click", ()=>{
                     api.openFolderDir(folder);
-                    setTimeout(()=>api.close(), 1000);
                 });
 
                     let img = document.createElement("img");

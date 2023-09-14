@@ -3,6 +3,7 @@ const { BrowserWindow } = require('electron-acrylic-window');
 const path = require("path");
 const fs = require("fs");
 const createShortcut = require('windows-shortcuts');
+const { exec } = require('child_process');
 
 let home = require("os").homedir();
 let appDIr = home + '/Documents/Windows App Folder';
@@ -11,8 +12,8 @@ if (!fs.existsSync(appDIr)){
     fs.mkdirSync(appDIr);
 }
 
-
-
+let exeLocation = path.join(__dirname, "WindowsAppFolder-win32-x64");
+if(app.isPackaged) exeLocation = path.join(__dirname, '..', '..')
 
 const createWindow = () => {
     const win = new BrowserWindow({
@@ -59,10 +60,10 @@ const createWindow = () => {
 
 
         createShortcut.create(finalDir+"/windowsAppFolderContent_DontEditOrExclude/"+data.name+".lnk", {
-            target: __dirname+"/WindowsAppFolder-win32-x64/WindowsAppFolder.exe",
-            args: `"${data.name}"`,
+            target: exeLocation+"/WindowsAppFolder.exe",
+            args: `"${data.name}" "${data.styleType}"`,
         }, () => {
-            require('child_process').exec('start "" "'+finalDir+'"', () => app.quit()); 
+            exec('start "" "'+finalDir+'"', () => app.quit()); 
         }); 
 
         return "success";
@@ -74,14 +75,12 @@ const createWindow = () => {
 
         let finalDir = appDIr + "/" + data;
          
-        require('child_process').exec('start "" "'+finalDir+'"'); 
+        exec('start "" "'+finalDir+'"', () => app.quit()); 
     })
 
     ipcMain.handle("close", () => {
         app.quit();
     })
-
-
 
     win.loadFile("src/createFolder.html")
 }
