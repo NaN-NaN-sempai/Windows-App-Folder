@@ -4,7 +4,7 @@
 
 # Windows App Folder
 
-Windows App Folder is an Windows app made with Electron.js, it creates stylized folders for Apps or Files that you place inside of it based on [Samsung app folders on android ](https://i.redd.it/m9pgij1fv4761.jpg).
+Windows App Folder is an Windows app made with Electron.js, it creates stylized folders for Apps or Files that you place inside of it based on [Samsung app folders on android](https://i.redd.it/m9pgij1fv4761.jpg).
 
 You can use [this link (not created yed)](./) to download the compiled project and just use it or check the code, edit and compile it on your computer.
 
@@ -12,9 +12,9 @@ You can use [this link (not created yed)](./) to download the compiled project a
 To use Windows App Folder first create a folder:
 1. Open the compiled folder and execute the .exe file. It will open the Folder Creator.
 ![CreateFolder](https://raw.githubusercontent.com/NaN-NaN-sempai/Windows-App-Folder/main/readmeContent/createfolder.png)
-2. Select the "+" icon in the top-right of the grey container.
+2. Select the "+" icon in the top-right of the grey container. Write a name and select a type then click save.
 ![createfolderpage](https://raw.githubusercontent.com/NaN-NaN-sempai/Windows-App-Folder/main/readmeContent/createfolderpage.png)
-3. write a name and select a type then click save. A Windows Explorer directory will open, this is where you will put your file to be shown.
+3. A Windows Explorer directory will open, this is where you will put your file to be shown.
 
 4. The folder `windowsAppFolderContent_DontEditOrExclude` contains the shortcut to open this custom folder (copy it to where you want, incuding the Windows's task bar, you can change the shortcut icon, there are a selection of icons in this path `<yourProjectLocation>\src\assets\icon` or if you are using the compiled version `<compiledLocation>\resources\app\src\assets\icon`) and the icon cache (it is created when the custom folder is opened, in case of visual bugs you can try deleteing the icon cache file). 
 ![foldercontent](https://raw.githubusercontent.com/NaN-NaN-sempai/Windows-App-Folder/main/readmeContent/foldercontent.png)
