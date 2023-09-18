@@ -12,7 +12,7 @@ You can use [this link (not created yed)](./) to download the compiled project a
 To use Windows App Folder first create a folder:
 1. Open the compiled folder and execute the .exe file. It will open the Folder Creator.
 ![CreateFolder](https://raw.githubusercontent.com/NaN-NaN-sempai/Windows-App-Folder/main/readmeContent/createfolder.png)
-2. Select the "+" icon in the top-right of the grey container. Write a name and select a type then click save.
+2. Select the "+" icon in the top-right of the grey container. Write a name and select a style then click save.
 ![createfolderpage](https://raw.githubusercontent.com/NaN-NaN-sempai/Windows-App-Folder/main/readmeContent/createfolderpage.png)
 3. A Windows Explorer directory will open, this is where you will put your file to be shown.
 
