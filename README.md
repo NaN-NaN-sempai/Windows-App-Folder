@@ -14,7 +14,7 @@ To use Windows App Folder first create a folder:
 ![CreateFolder](https://raw.githubusercontent.com/NaN-NaN-sempai/Windows-App-Folder/main/readmeContent/createfolder.png)
 2. Select the "+" icon in the top-right of the grey container. Write a name and select a style then click save.
 ![createfolderpage](https://raw.githubusercontent.com/NaN-NaN-sempai/Windows-App-Folder/main/readmeContent/createfolderpage.png)
-3. A Windows Explorer directory will open, this is where you will put your file to be shown.
+3. Your custom folder directory will be created in `~\Documents\Windows App Folder\<myFolderName>` then it will open on file explorer, this is where you will put your file to be shown.
 
 4. The folder `windowsAppFolderContent_DontEditOrExclude` contains the shortcut to open this custom folder (copy it to where you want, incuding the Windows's task bar, you can change the shortcut icon, there are a selection of icons in this path `<yourProjectLocation>\src\assets\icon` or if you are using the compiled version `<compiledLocation>\resources\app\src\assets\icon`) and the icon cache (it is created when the custom folder is opened, in case of visual bugs you can try deleteing the icon cache file). 
 ![foldercontent](https://raw.githubusercontent.com/NaN-NaN-sempai/Windows-App-Folder/main/readmeContent/foldercontent.png)
