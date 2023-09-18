@@ -4,7 +4,7 @@
 
 # Windows App Folder
 
-Windows App Folder is an Windows app made with Electron, it creates stylized folders for Apps or Files that you place inside of it.
+Windows App Folder is an Windows app made with Electron.js, it creates stylized folders for Apps or Files that you place inside of it based on [Samsung app folders on android ](https://i.redd.it/m9pgij1fv4761.jpg).
 
 You can use [this link (not created yed)](./) to download the compiled project and just use it or check the code, edit and compile it on your computer.
 
