@@ -20,25 +20,29 @@ Tested in Windows 10 and Windows 11, the project works fine on both.
 
 
 ## Demonstration
-To use Windows App Folder first create a folder:
+To use Windows App Folder lets first create a custom folder:
 1. Open the compiled folder and execute the .exe file. It will open the Folder Creator.
 <div align="center">
     <img alt="Create a custom folder" title="Create a custom folder" src="https://raw.githubusercontent.com/NaN-NaN-sempai/Windows-App-Folder/main/readmeContent/createfolder.png">
 </div>
 
-2. Select the "+" icon in the top-right of the grey container. Write a name and select a style then click save.
+2. Select the "+" icon in the top-right of the grey container. In the new window write a name and select a style then click `Save`.
 <div align="center">
     <img alt="Folder Creator Window" title="Folder Creator Window" src="https://raw.githubusercontent.com/NaN-NaN-sempai/Windows-App-Folder/main/readmeContent/createfolderpage.png">
 </div>
 
-3. Your custom folder directory will be created in `~\Documents\Windows App Folder\<myFolderName>` then it will open on file explorer, this is where you will put your file to be shown.
+3. Your custom folder directory will be created in `~\Documents\Windows App Folder\<myFolderName>` and a file explorer will open, this is where you will place your files to be shown.
    
-4. The folder `windowsAppFolderContent_DontEditOrExclude` contains the shortcut to open this custom folder (copy it to where you want, incuding the Windows's task bar, you can change the shortcut icon, there are a selection of icons in this path `<yourProjectLocation>\src\assets\icon` or if you are using the compiled version `<compiledLocation>\resources\app\src\assets\icon`) and the icon cache (it is created when the custom folder is opened, in case of visual bugs you can try deleteing the icon cache file). 
+- The folder `windowsAppFolderContent_DontEditOrExclude` contains the shortcut to open this custom folder (copy it to where you want, incuding the Windows's task bar) and the icon cache (it is created when the custom folder is opened, in case of visual bugs you can try deleteing the icon cache file). 
 <div align="center">
     <img alt="Folder directory and content" title="Folder directory and content" src="https://raw.githubusercontent.com/NaN-NaN-sempai/Windows-App-Folder/main/readmeContent/foldercontent.png">
 </div> 
 
-5. Now just open the shortcut and select a file.
+- You can change the shortcut icon, there are a selection of icons alread saved on the project:
+  - `<yourProjectLocation>\src\assets\icon` - if you cloned the project - (files on [Github](https://github.com/NaN-NaN-sempai/Windows-App-Folder/tree/main/src/assets/icon))
+  - `<compiledLocation>\resources\app\src\assets\icon` - if you are using the compiled version.
+
+4. Now just open the shortcut and select a file.
 <div align="center">
     <img alt="Custom Folder content" title="Custom Folder content" src="https://raw.githubusercontent.com/NaN-NaN-sempai/Windows-App-Folder/main/readmeContent/folderexecution.png">
 </div>  
