@@ -56,7 +56,7 @@ To compile the project:
    ```
    or any other method to clone it.
 
-2. Run NPM installations to install all the required Node modules:
+2. Run npm to install all the required Node Js modules:
    ```bash
    npm i
    ```
