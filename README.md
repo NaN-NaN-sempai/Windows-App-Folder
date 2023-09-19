@@ -31,7 +31,7 @@ To use Windows App Folder lets first create a custom folder:
     <img alt="Folder Creator Window" title="Folder Creator Window" src="https://raw.githubusercontent.com/NaN-NaN-sempai/Windows-App-Folder/main/readmeContent/createfolderpage.png">
 </div>
 
-3. Your custom folder directory will be created in `~\Documents\Windows App Folder\<myFolderName>` and a file explorer will open, this is where you will place your files to be shown.
+3. Your custom folder directory will be created in `~\Documents\Windows App Folder\<myFolderName>` and the file explorer will open, this is where you will place your files to be shown.
    
 - The folder `windowsAppFolderContent_DontEditOrExclude` contains the shortcut to open this custom folder (copy it to where you want, incuding the Windows's task bar) and the icon cache (it is created when the custom folder is opened, in case of visual bugs you can try deleteing the icon cache file). 
 <div align="center">
