@@ -26,12 +26,12 @@ To use Windows App Folder lets first create a custom folder:
     <img alt="Create a custom folder" title="Create a custom folder" src="https://raw.githubusercontent.com/NaN-NaN-sempai/Windows-App-Folder/main/readmeContent/createfolder.png">
 </div>
 
-2. Select the "+" icon in the top-right of the grey container. In the new window write a name and select a style then click `Save`.
+2. Select the "+" icon in the top-right of the grey container to create a new custom folder. In the new window write a name and select a style then click `Save`.
 <div align="center">
     <img alt="Folder Creator Window" title="Folder Creator Window" src="https://raw.githubusercontent.com/NaN-NaN-sempai/Windows-App-Folder/main/readmeContent/createfolderpage.png">
 </div>
 
-3. Your custom folder directory will be created in `~\Documents\Windows App Folder\<myFolderName>` and the file explorer will open, this is where you will place your files to be shown.
+3. Your custom folder directory will be created in `~\Documents\Windows App Folder\<myFolderName>` and the file explorer will open this location, this is where you will place your files to be shown in the custom folder.
    
 - The folder `windowsAppFolderContent_DontEditOrExclude` contains the shortcut to open this custom folder (copy it to where you want, incuding the Windows's task bar) and the icon cache (it is created when the custom folder is opened, in case of visual bugs you can try deleteing the icon cache file). 
 <div align="center">
@@ -49,7 +49,7 @@ To use Windows App Folder lets first create a custom folder:
 
 - (optional) In a custom folder, you can click on the "+" icon in the top-right of the grey container to open it's directory.
 
-- (optional) If you forget your custom folder directory, open the compiled .exe file and select one of you created custom folders, it will open it's directory on file explorer.
+- (optional) If you forget your custom folder directory, open the compiled .exe file and select one of your's created custom folders, it will open it's directory on file explorer.
 
 ## Compilling
     
