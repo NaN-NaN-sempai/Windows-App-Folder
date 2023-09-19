@@ -50,7 +50,7 @@ To use Windows App Folder first create a folder:
 ## Compilling
     
 To compile the project:
-1. Clone this project, you can use:
+1. Clone this project using:
    ```bash
    git clone https://github.com/NaN-NaN-sempai/Windows-App-Folder.git
    ```
