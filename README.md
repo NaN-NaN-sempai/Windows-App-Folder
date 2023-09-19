@@ -75,8 +75,8 @@ To compile the project:
    myFolderStyle can be either `"typeA"` or `"typeB"`.
 ## Functionalities
 
-- 2 styles
-- Extract icons from .lnk .exe
+- 2 different styles
+- Extract icons from .lnk and .exe files
 - Extract icons from Steam and Epic Games .url files
 
 
