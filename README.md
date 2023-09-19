@@ -40,7 +40,7 @@ To compile the project:
    npm i
    ```
 
-3. Run the pack command, it will automatically create compiled project:
+3. Run the pack command, it will automatically compile the project:
    ```bash
    npm run pack
    ```
