@@ -49,7 +49,7 @@ To use Windows App Folder lets first create a custom folder:
 
 - (optional) In a custom folder, you can click on the "+" icon in the top-right of the grey container to open it's directory.
 
-- (optional) If you forget your custom folder directory, open the compiled .exe file and select one of you created custom folders, it will open it's directory.
+- (optional) If you forget your custom folder directory, open the compiled .exe file and select one of you created custom folders, it will open it's directory on file explorer.
 
 ## Compilling
     
