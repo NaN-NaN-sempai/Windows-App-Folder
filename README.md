@@ -8,19 +8,36 @@ Windows App Folder is an Windows app made with Electron.js, it creates stylized 
 
 You can use [this link (not created yed)](./) to download the compiled project and just use it or check the code, edit and compile it on your computer.
 
+The project uses [electron-acrylic-window](https://www.npmjs.com/package/electron-acrylic-window), if the Windows opacity option is off the program will not be translucent. Here is a quick video on [how to enable/disable the Windows opacity option](https://www.youtube.com/watch?v=WN8W-d0zbfY):
+
+<div align="center">
+    <a href="https://img.youtube.com/vi/WN8W-d0zbfY/0.jpg">
+        <img alt="how to enable/disable the Windows opacity option" title="how to enable/disable the Windows opacity option" src="https://img.youtube.com/vi/WN8W-d0zbfY/0.jpg">
+    </a>
+</div>
+
+
 ## Demonstration
 To use Windows App Folder first create a folder:
 1. Open the compiled folder and execute the .exe file. It will open the Folder Creator.
-![CreateFolder](https://raw.githubusercontent.com/NaN-NaN-sempai/Windows-App-Folder/main/readmeContent/createfolder.png)
-2. Select the "+" icon in the top-right of the grey container. Write a name and select a style then click save.
-![createfolderpage](https://raw.githubusercontent.com/NaN-NaN-sempai/Windows-App-Folder/main/readmeContent/createfolderpage.png)
-3. Your custom folder directory will be created in `~\Documents\Windows App Folder\<myFolderName>` then it will open on file explorer, this is where you will put your file to be shown.
+<div align="center">
+    <img alt="Create a custom folder" title="Create a custom folder" src="https://raw.githubusercontent.com/NaN-NaN-sempai/Windows-App-Folder/main/readmeContent/createfolder.png">
+</div>
+3. Select the "+" icon in the top-right of the grey container. Write a name and select a style then click save.
+<div align="center">
+    <img alt="Folder Creator Window" title="Folder Creator Window" src="https://raw.githubusercontent.com/NaN-NaN-sempai/Windows-App-Folder/main/readmeContent/createfolderpage.png">
+</div>
+4. Your custom folder directory will be created in `~\Documents\Windows App Folder\<myFolderName>` then it will open on file explorer, this is where you will put your file to be shown.
 
-4. The folder `windowsAppFolderContent_DontEditOrExclude` contains the shortcut to open this custom folder (copy it to where you want, incuding the Windows's task bar, you can change the shortcut icon, there are a selection of icons in this path `<yourProjectLocation>\src\assets\icon` or if you are using the compiled version `<compiledLocation>\resources\app\src\assets\icon`) and the icon cache (it is created when the custom folder is opened, in case of visual bugs you can try deleteing the icon cache file). 
-![foldercontent](https://raw.githubusercontent.com/NaN-NaN-sempai/Windows-App-Folder/main/readmeContent/foldercontent.png)
+5. The folder `windowsAppFolderContent_DontEditOrExclude` contains the shortcut to open this custom folder (copy it to where you want, incuding the Windows's task bar, you can change the shortcut icon, there are a selection of icons in this path `<yourProjectLocation>\src\assets\icon` or if you are using the compiled version `<compiledLocation>\resources\app\src\assets\icon`) and the icon cache (it is created when the custom folder is opened, in case of visual bugs you can try deleteing the icon cache file). 
+<div align="center">
+    <img alt="Folder directory and content" title="Folder directory and content" src="https://raw.githubusercontent.com/NaN-NaN-sempai/Windows-App-Folder/main/readmeContent/foldercontent.png">
+</div> 
 
-5. Now just open the shortcut and select a file.
-![foldercontent](https://raw.githubusercontent.com/NaN-NaN-sempai/Windows-App-Folder/main/readmeContent/folderexecution.png)
+6. Now just open the shortcut and select a file.
+<div align="center">
+    <img alt="Custom Folder content" title="Custom Folder content" src="https://raw.githubusercontent.com/NaN-NaN-sempai/Windows-App-Folder/main/readmeContent/folderexecution.png">
+</div>  
 
 - (optional) In a custom folder, you can click on the "+" icon in the top-right of the grey container to open it's directory.
 
