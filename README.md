@@ -1,8 +1,11 @@
-
+<div align="center">
+    
 ![Logo](https://raw.githubusercontent.com/NaN-NaN-sempai/Windows-App-Folder/main/src/assets/icon/logo.ico)
-
-
 # Windows App Folder
+
+</div>
+
+<br>
 
 Windows App Folder is an Windows app made with Electron.js, it creates stylized folders for Apps or Files that you place inside of it based on [Samsung app folders on android](https://i.redd.it/m9pgij1fv4761.jpg).
 
