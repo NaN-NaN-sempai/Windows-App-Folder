@@ -9,7 +9,9 @@
 
 Windows App Folder is an Windows app made with Electron.js, it creates stylized folders for Apps or Files that you place inside of it based on [Samsung app folders on android](https://i.redd.it/m9pgij1fv4761.jpg).
 
-You can use [this link (not created yed)](./) to download the compiled project and just use it or check the code, edit and compile it on your computer.
+> The download link was not created yet, for now compile it yourself using the [Compiling Guide](#compiling).
+
+You can use [this link (not working)](./) to download the compiled project and just use it or check the code, edit and compile it on your computer.
 
 The project uses [electron-acrylic-window](https://www.npmjs.com/package/electron-acrylic-window) so if the Windows opacity option is off the program will not be translucent. Here is a quick video on [how to enable/disable the Windows opacity option](https://www.youtube.com/watch?v=WN8W-d0zbfY):
 
@@ -48,7 +50,7 @@ To use Windows App Folder lets first create a custom folder:
 
 - (optional) If you forget your custom folder directory, open the compiled .exe file and select one of your's created custom folders, it will open it's directory on file explorer.
 
-## Compilling
+## Compiling
     
 To compile the project:
 1. Clone this project using:
