@@ -11,15 +11,9 @@ Windows App Folder is an Windows app made with Electron.js, it creates stylized 
 
 You can use [this link (not created yed)](./) to download the compiled project and just use it or check the code, edit and compile it on your computer.
 
-The project uses [electron-acrylic-window](https://www.npmjs.com/package/electron-acrylic-window), if the Windows opacity option is off the program will not be translucent. Here is a quick video on [how to enable/disable the Windows opacity option](https://www.youtube.com/watch?v=WN8W-d0zbfY):
+The project uses [electron-acrylic-window](https://www.npmjs.com/package/electron-acrylic-window) so if the Windows opacity option is off the program will not be translucent. Here is a quick video on [how to enable/disable the Windows opacity option](https://www.youtube.com/watch?v=WN8W-d0zbfY):
 
-<div align="center">
-    <a href="https://www.youtube.com/watch?v=WN8W-d0zbfY">
-        <img alt="how to enable/disable the Windows opacity option" title="how to enable/disable the Windows opacity option" src="https://img.youtube.com/vi/WN8W-d0zbfY/0.jpg">
-    </a>
-</div>
-
-Tested in Windows 10 and Windows 11, the project works fine on both.
+Tested in Windows 10 and Windows 11, the project works fine on both although on Windows 11 the acrylic effect is much more intense.
 
 
 ## Demonstration
