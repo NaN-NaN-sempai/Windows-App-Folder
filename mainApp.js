@@ -44,7 +44,7 @@ function getCommandLine() {
 const workJson = (path) => {
     return {
         create(){
-            //if (!fs.existsSync(path))
+            if (!fs.existsSync(path))
                 fs.writeFileSync(path, JSON.stringify({}, null, "\t"));
         },
         read: () => fs.readFileSync(path, 'utf8'),
@@ -71,7 +71,7 @@ const createWindow = () => {
             preload: path.join(__dirname, "preload.js")
         }
     });
-    win.webContents.openDevTools();
+    //win.webContents.openDevTools();
 
     win.maximize()
 
