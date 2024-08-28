@@ -22,6 +22,26 @@ const getIcon = async (file, img) => {
             api.iconCache({action: "write", iconCache})
         })
     }
+
+    /* MAYBE BETTER?
+    const setupIconCache = (doSetSrc) => {
+        api.getIcon(file).then(icon => {
+            if(doSetSrc) setSrc(icon);
+
+            iconCache[file] = icon;
+            api.iconCache({action: "write", iconCache})
+        })
+    }
+
+    let doSetSrc = true;
+
+    if(iconCache[file]){
+        setSrc(iconCache[file]);
+        doSetSrc = false;
+    }
+
+    console.log(file, new Date().getMilliseconds(), "read from api");
+    setupIconCache(doSetSrc); */
 }
 
 

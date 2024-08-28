@@ -4,13 +4,17 @@ const path = require("path");
 const fs = require("fs");
 const Fs = require('@supercharge/fs');
 const { exec } = require("node:child_process");
-
+const extractFileIcon = require("extract-file-icon");
 
 const getIcon = require("./getIcon");
 
 
-var home = require("os").homedir();
-var appDIr = home + '/Documents/Windows App Folder';
+const home = require("os").homedir();
+const appDIr = home + '/Documents/Windows App Folder';
+
+
+const defaultContentFolderName = "windowsAppFolderContent_DontEditOrExclude";
+
 
 if (!fs.existsSync(appDIr)){
     fs.mkdirSync(appDIr);
@@ -80,7 +84,7 @@ const createWindow = () => {
         let { action, iconCache } = data;
         let folder = cmdLineArgs[0];
 
-        let fileDir = appDIr+"/"+folder+"/windowsAppFolderContent_DontEditOrExclude/iconsCache.json";
+        let fileDir = appDIr+"/"+folder+"/"+defaultContentFolderName+"/iconsCache.json";
 
         let jsonFile = workJson(fileDir);
 
@@ -99,66 +103,69 @@ const createWindow = () => {
         let fileIcon;
         let fileDir = appDIr+"/"+folder+"/"+file;
         
-        let isDir = fs.lstatSync(fileDir).isDirectory() ; 
+        try {
 
-        if(isDir){
+            let useGetIcon = true;
+            let iconLocation = fileDir;
+            let iconContent;
+            
+            // if lile is a url
+            if(file.toLowerCase().includes(".url")){
+                let fileContent = fs.readFileSync(fileDir, 'utf8'); 
+
+                const objectfyFile = () => {
+                    lines = fileContent.split("\n").filter(e => e.includes("="));
+
+                    obj = {}
+                    lines.forEach(line => { 
+                        let [key, value] = line.split("=") 
+                        obj[key] = value;
+                    }); 
+
+                    return obj;
+                }
+
+                // if url is a epic games shortcut
+                if(fileContent.toLowerCase().includes("epic games")){
+                    obj = objectfyFile();
+
+                    iconLocation = obj.IconFile;
+                }
+
+                // if url is a steam shortcut
+                if(fileContent.toLowerCase().includes("steam")){
+                    obj = objectfyFile(); 
+
+                    let icon = obj.IconFile
+                    
+                    useGetIcon = false
+                    iconContent = fs.readFileSync(icon.slice(0, icon.length-1), {encoding: 'base64'});
+                }
+
+            // for any type of file
+            } else {
+                
+                let normalizedIconLocation = iconLocation.replaceAll("/", "\\");
+                useGetIcon = false;
+
+                iconContent = extractFileIcon(normalizedIconLocation, 320).toString("base64");
+            }
+
+
+
+            fileIcon = {
+                addPreText: true,
+                content: useGetIcon? await getIcon(iconLocation): iconContent
+            }
+        } catch (err) {
+            console.log(err);
             fileIcon = {
                 addPreText: false,
-                content: "assets/icon/logo.png"
-            }
-        } else {
-            try {
-
-                let useGetIcon = true;
-                let iconLocation = fileDir;
-                let iconContent;
-                
-                // if lile is a url
-                if(file.toLowerCase().includes(".url")){
-                    let fileContent = fs.readFileSync(fileDir, 'utf8'); 
-
-                    const objectfyFile = () => {
-                        lines = fileContent.split("\n").filter(e => e.includes("="));
-
-                        obj = {}
-                        lines.forEach(line => { 
-                            let [key, value] = line.split("=") 
-                            obj[key] = value;
-                        }); 
-
-                        return obj;
-                    }
-
-                    // if url is a epic games shortcut
-                    if(fileContent.toLowerCase().includes("epic games")){
-                        obj = objectfyFile();
-
-                        iconLocation = obj.IconFile;
-                    }
-
-                    // if url is a steam shortcut
-                    if(fileContent.toLowerCase().includes("steam")){
-                        obj = objectfyFile(); 
-
-                        let icon = obj.IconFile
-                        
-                        useGetIcon = false
-                        iconContent = fs.readFileSync(icon.slice(0, icon.length-1), {encoding: 'base64'});
-                    }
-                }
-
-                fileIcon = {
-                    addPreText: true,
-                    content: useGetIcon? await getIcon(iconLocation): iconContent
-                }
-            } catch (err) {
-                fileIcon = {
-                    addPreText: false,
-                    content: "assets/icon/unrecognizedFile.png",
-                    errorCode: err
-                } 
+                content: "assets/icon/unrecognizedFile.png",
+                errorCode: err
             } 
         } 
+
 
         return fileIcon;
     })
@@ -190,7 +197,7 @@ const createWindow = () => {
                     name: Fs.filename(fileDir),
                     fullName: file,
                     path: encodeURI(fileDir),
-                    ignore: file=="windowsAppFolderContent_DontEditOrExclude"
+                    ignore: file == defaultContentFolderName
                 });
 
             })
