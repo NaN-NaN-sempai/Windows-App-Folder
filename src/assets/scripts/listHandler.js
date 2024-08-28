@@ -74,7 +74,7 @@ const getIcon = async (file, img) => {
             
             let a = document.createElement("a");
                 a.className = "item"; 
-                a.title = file.name;
+                a.title = file.fullName;
                 a.dataset.fullName = file.fullName;
                 a.dataset.path = file.path;
                 a.addEventListener("click", async ()=>{

@@ -5,6 +5,7 @@ const fs = require("fs");
 const Fs = require('@supercharge/fs');
 const { exec } = require("node:child_process");
 const extractFileIcon = require("extract-file-icon");
+const mime = require('mime-types');
 
 const getIcon = require("./getIcon");
 
@@ -15,6 +16,10 @@ const appDIr = home + '/Documents/Windows App Folder';
 
 const defaultContentFolderName = "windowsAppFolderContent_DontEditOrExclude";
 
+function isImage(filePath) {
+    const mimeType = mime.lookup(filePath);
+    return mimeType && mimeType.startsWith('image/');
+}
 
 if (!fs.existsSync(appDIr)){
     fs.mkdirSync(appDIr);
@@ -39,7 +44,7 @@ function getCommandLine() {
 const workJson = (path) => {
     return {
         create(){
-            if (!fs.existsSync(path))
+            //if (!fs.existsSync(path))
                 fs.writeFileSync(path, JSON.stringify({}, null, "\t"));
         },
         read: () => fs.readFileSync(path, 'utf8'),
@@ -65,7 +70,8 @@ const createWindow = () => {
         webPreferences: {
             preload: path.join(__dirname, "preload.js")
         }
-    }); 
+    });
+    win.webContents.openDevTools();
 
     win.maximize()
 
@@ -144,11 +150,16 @@ const createWindow = () => {
 
             // for any type of file
             } else {
-                
                 let normalizedIconLocation = iconLocation.replaceAll("/", "\\");
                 useGetIcon = false;
 
-                iconContent = extractFileIcon(normalizedIconLocation, 320).toString("base64");
+                if(isImage(normalizedIconLocation)) {
+                    iconContent = fs.readFileSync(normalizedIconLocation, {encoding: 'base64'});
+                } else {
+                    iconContent = extractFileIcon(normalizedIconLocation, 320).toString("base64");
+                }
+                
+
             }
 
 

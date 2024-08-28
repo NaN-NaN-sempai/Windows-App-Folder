@@ -140,6 +140,7 @@ body {
         padding: 5px;
         
         display: grid;
+        align-items: end; 
         grid-template-columns: auto auto auto auto; 
 
         max-height: 53vh;

@@ -19,6 +19,7 @@
     "electron-acrylic-window": "^0.5.11",
     "extract-file-icon": "^0.3.2",
     "lodash": "^4.17.21",
+    "mime-types": "^2.1.35",
     "node-fetch": "^2.7.0",
     "windows-shortcuts": "^0.1.6"
   }
