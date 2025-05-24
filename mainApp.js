@@ -13,6 +13,11 @@ const getIcon = require("./getIcon");
 const home = require("os").homedir();
 const appDIr = home + '/Documents/Windows App Folder';
 
+const createErrorLog = (error) => {
+    let errorLog = path.join(appDIr, "logs", "errorLog.txt");
+    fs.writeFileSync(errorLog, error, 'utf-8');
+}
+
 
 const defaultContentFolderName = "windowsAppFolderContent_DontEditOrExclude";
 
@@ -138,8 +143,9 @@ const createWindow = () => {
                     iconLocation = obj.IconFile;
                 }
 
-                // if url is a steam shortcut
-                if(fileContent.toLowerCase().includes("steam")){
+                // if url is a steam and uplay shortcut
+                if( fileContent.toLowerCase().includes("steam") ||
+                    fileContent.toLowerCase().includes("uplay")) {
                     obj = objectfyFile(); 
 
                     let icon = obj.IconFile

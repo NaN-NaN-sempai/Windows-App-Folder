@@ -1,3 +1,6 @@
 node_modules
 WindowsAppFolder-win32-x64
 WindowsAppFolder_FolderCreator-win32-x64
+
+
+logs/*
